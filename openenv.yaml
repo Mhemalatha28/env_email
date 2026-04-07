@@ -1,0 +1,27 @@
+name: email-classification-env
+description: An OpenEnv environment for classifying emails into spam, important, and normal categories.
+
+entry_point: email_env:EmailEnvironment
+
+tasks:
+  - name: easy
+    description: Basic email classification with simple patterns
+
+  - name: medium
+    description: Moderate difficulty with mixed patterns
+
+  - name: hard
+    description: Complex and ambiguous email classification
+
+actions:
+  - spam
+  - important
+  - normal
+
+observation_space:
+  type: string
+  description: The email text
+
+reward:
+  type: float
+  description: Reward based on correctness of classification
